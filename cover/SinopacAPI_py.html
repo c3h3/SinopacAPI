@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7"/>
+    <title>Coverage for SinopacAPI.py: 91%</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="jquery.isonscreen.js"></script>
+    <script type="text/javascript" src="coverage_html.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(coverage.pyfile_ready);
+    </script>
+</head>
+<body class="pyfile">
+
+<div id="header">
+    <div class="content">
+        <h1>Coverage for <b>SinopacAPI.py</b> :
+            <span class="pc_cov">91%</span>
+        </h1>
+
+        <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts"/>
+
+        <h2 class="stats">
+            100 statements &nbsp;
+            <span class="run hide_run shortkey_r button_toggle_run">91 run</span>
+            <span class="mis shortkey_m button_toggle_mis">9 missing</span>
+            <span class="exc shortkey_x button_toggle_exc">0 excluded</span>
+
+
+        </h2>
+    </div>
+</div>
+
+<div class="help_panel">
+    <img id="panel_icon" src="keybd_open.png" alt="Hide keyboard shortcuts"/>
+    <p class="legend">Hot-keys on this page</p>
+    <div>
+        <p class="keyhelp">
+            <span class="key">r</span>
+            <span class="key">m</span>
+            <span class="key">x</span>
+            <span class="key">p</span> &nbsp; toggle line displays
+        </p>
+        <p class="keyhelp">
+            <span class="key">j</span>
+            <span class="key">k</span> &nbsp; next/prev highlighted chunk
+        </p>
+        <p class="keyhelp">
+            <span class="key">0</span> &nbsp; (zero) top of page
+        </p>
+        <p class="keyhelp">
+            <span class="key">1</span> &nbsp; (one) first highlighted chunk
+        </p>
+    </div>
+</div>
+
+<div id="source">
+    <table>
+        <tr>
+            <td class="linenos">
+                <p id="n1" class="pln"><a href="#n1">1</a></p>
+                <p id="n2" class="pln"><a href="#n2">2</a></p>
+                <p id="n3" class="stm run hide_run"><a href="#n3">3</a></p>
+                <p id="n4" class="stm run hide_run"><a href="#n4">4</a></p>
+                <p id="n5" class="pln"><a href="#n5">5</a></p>
+                <p id="n6" class="stm run hide_run"><a href="#n6">6</a></p>
+                <p id="n7" class="pln"><a href="#n7">7</a></p>
+                <p id="n8" class="stm run hide_run"><a href="#n8">8</a></p>
+                <p id="n9" class="pln"><a href="#n9">9</a></p>
+                <p id="n10" class="pln"><a href="#n10">10</a></p>
+                <p id="n11" class="stm run hide_run"><a href="#n11">11</a></p>
+                <p id="n12" class="stm run hide_run"><a href="#n12">12</a></p>
+                <p id="n13" class="stm run hide_run"><a href="#n13">13</a></p>
+                <p id="n14" class="stm run hide_run"><a href="#n14">14</a></p>
+                <p id="n15" class="pln"><a href="#n15">15</a></p>
+                <p id="n16" class="stm run hide_run"><a href="#n16">16</a></p>
+                <p id="n17" class="pln"><a href="#n17">17</a></p>
+                <p id="n18" class="pln"><a href="#n18">18</a></p>
+                <p id="n19" class="stm run hide_run"><a href="#n19">19</a></p>
+                <p id="n20" class="stm run hide_run"><a href="#n20">20</a></p>
+                <p id="n21" class="stm run hide_run"><a href="#n21">21</a></p>
+                <p id="n22" class="stm run hide_run"><a href="#n22">22</a></p>
+                <p id="n23" class="pln"><a href="#n23">23</a></p>
+                <p id="n24" class="stm run hide_run"><a href="#n24">24</a></p>
+                <p id="n25" class="stm run hide_run"><a href="#n25">25</a></p>
+                <p id="n26" class="stm run hide_run"><a href="#n26">26</a></p>
+                <p id="n27" class="pln"><a href="#n27">27</a></p>
+                <p id="n28" class="stm run hide_run"><a href="#n28">28</a></p>
+                <p id="n29" class="stm run hide_run"><a href="#n29">29</a></p>
+                <p id="n30" class="stm run hide_run"><a href="#n30">30</a></p>
+                <p id="n31" class="pln"><a href="#n31">31</a></p>
+                <p id="n32" class="stm run hide_run"><a href="#n32">32</a></p>
+                <p id="n33" class="stm run hide_run"><a href="#n33">33</a></p>
+                <p id="n34" class="stm run hide_run"><a href="#n34">34</a></p>
+                <p id="n35" class="pln"><a href="#n35">35</a></p>
+                <p id="n36" class="stm run hide_run"><a href="#n36">36</a></p>
+                <p id="n37" class="stm run hide_run"><a href="#n37">37</a></p>
+                <p id="n38" class="stm run hide_run"><a href="#n38">38</a></p>
+                <p id="n39" class="stm run hide_run"><a href="#n39">39</a></p>
+                <p id="n40" class="pln"><a href="#n40">40</a></p>
+                <p id="n41" class="stm run hide_run"><a href="#n41">41</a></p>
+                <p id="n42" class="stm run hide_run"><a href="#n42">42</a></p>
+                <p id="n43" class="stm run hide_run"><a href="#n43">43</a></p>
+                <p id="n44" class="stm run hide_run"><a href="#n44">44</a></p>
+                <p id="n45" class="pln"><a href="#n45">45</a></p>
+                <p id="n46" class="stm run hide_run"><a href="#n46">46</a></p>
+                <p id="n47" class="stm run hide_run"><a href="#n47">47</a></p>
+                <p id="n48" class="stm run hide_run"><a href="#n48">48</a></p>
+                <p id="n49" class="pln"><a href="#n49">49</a></p>
+                <p id="n50" class="stm run hide_run"><a href="#n50">50</a></p>
+                <p id="n51" class="pln"><a href="#n51">51</a></p>
+                <p id="n52" class="stm mis"><a href="#n52">52</a></p>
+                <p id="n53" class="pln"><a href="#n53">53</a></p>
+                <p id="n54" class="stm run hide_run"><a href="#n54">54</a></p>
+                <p id="n55" class="pln"><a href="#n55">55</a></p>
+                <p id="n56" class="stm run hide_run"><a href="#n56">56</a></p>
+                <p id="n57" class="stm run hide_run"><a href="#n57">57</a></p>
+                <p id="n58" class="stm run hide_run"><a href="#n58">58</a></p>
+                <p id="n59" class="stm run hide_run"><a href="#n59">59</a></p>
+                <p id="n60" class="pln"><a href="#n60">60</a></p>
+                <p id="n61" class="stm run hide_run"><a href="#n61">61</a></p>
+                <p id="n62" class="stm mis"><a href="#n62">62</a></p>
+                <p id="n63" class="stm mis"><a href="#n63">63</a></p>
+                <p id="n64" class="pln"><a href="#n64">64</a></p>
+                <p id="n65" class="stm run hide_run"><a href="#n65">65</a></p>
+                <p id="n66" class="pln"><a href="#n66">66</a></p>
+                <p id="n67" class="stm mis"><a href="#n67">67</a></p>
+                <p id="n68" class="pln"><a href="#n68">68</a></p>
+                <p id="n69" class="stm run hide_run"><a href="#n69">69</a></p>
+                <p id="n70" class="pln"><a href="#n70">70</a></p>
+                <p id="n71" class="stm run hide_run"><a href="#n71">71</a></p>
+                <p id="n72" class="pln"><a href="#n72">72</a></p>
+                <p id="n73" class="stm run hide_run"><a href="#n73">73</a></p>
+                <p id="n74" class="stm mis"><a href="#n74">74</a></p>
+                <p id="n75" class="pln"><a href="#n75">75</a></p>
+                <p id="n76" class="stm run hide_run"><a href="#n76">76</a></p>
+                <p id="n77" class="stm run hide_run"><a href="#n77">77</a></p>
+                <p id="n78" class="stm run hide_run"><a href="#n78">78</a></p>
+                <p id="n79" class="stm run hide_run"><a href="#n79">79</a></p>
+                <p id="n80" class="stm run hide_run"><a href="#n80">80</a></p>
+                <p id="n81" class="pln"><a href="#n81">81</a></p>
+                <p id="n82" class="stm run hide_run"><a href="#n82">82</a></p>
+                <p id="n83" class="stm run hide_run"><a href="#n83">83</a></p>
+                <p id="n84" class="stm run hide_run"><a href="#n84">84</a></p>
+                <p id="n85" class="pln"><a href="#n85">85</a></p>
+                <p id="n86" class="stm run hide_run"><a href="#n86">86</a></p>
+                <p id="n87" class="stm run hide_run"><a href="#n87">87</a></p>
+                <p id="n88" class="stm run hide_run"><a href="#n88">88</a></p>
+                <p id="n89" class="stm run hide_run"><a href="#n89">89</a></p>
+                <p id="n90" class="stm run hide_run"><a href="#n90">90</a></p>
+                <p id="n91" class="stm run hide_run"><a href="#n91">91</a></p>
+                <p id="n92" class="stm run hide_run"><a href="#n92">92</a></p>
+                <p id="n93" class="pln"><a href="#n93">93</a></p>
+                <p id="n94" class="stm run hide_run"><a href="#n94">94</a></p>
+                <p id="n95" class="stm mis"><a href="#n95">95</a></p>
+                <p id="n96" class="stm mis"><a href="#n96">96</a></p>
+                <p id="n97" class="stm run hide_run"><a href="#n97">97</a></p>
+                <p id="n98" class="stm run hide_run"><a href="#n98">98</a></p>
+                <p id="n99" class="stm run hide_run"><a href="#n99">99</a></p>
+                <p id="n100" class="pln"><a href="#n100">100</a></p>
+                <p id="n101" class="stm run hide_run"><a href="#n101">101</a></p>
+                <p id="n102" class="pln"><a href="#n102">102</a></p>
+                <p id="n103" class="stm run hide_run"><a href="#n103">103</a></p>
+                <p id="n104" class="stm run hide_run"><a href="#n104">104</a></p>
+                <p id="n105" class="stm run hide_run"><a href="#n105">105</a></p>
+                <p id="n106" class="stm run hide_run"><a href="#n106">106</a></p>
+                <p id="n107" class="stm run hide_run"><a href="#n107">107</a></p>
+                <p id="n108" class="stm run hide_run"><a href="#n108">108</a></p>
+                <p id="n109" class="stm run hide_run"><a href="#n109">109</a></p>
+                <p id="n110" class="stm run hide_run"><a href="#n110">110</a></p>
+                <p id="n111" class="stm run hide_run"><a href="#n111">111</a></p>
+                <p id="n112" class="stm run hide_run"><a href="#n112">112</a></p>
+                <p id="n113" class="stm mis"><a href="#n113">113</a></p>
+                <p id="n114" class="stm mis"><a href="#n114">114</a></p>
+                <p id="n115" class="stm run hide_run"><a href="#n115">115</a></p>
+                <p id="n116" class="stm run hide_run"><a href="#n116">116</a></p>
+                <p id="n117" class="stm run hide_run"><a href="#n117">117</a></p>
+                <p id="n118" class="pln"><a href="#n118">118</a></p>
+                <p id="n119" class="stm run hide_run"><a href="#n119">119</a></p>
+                <p id="n120" class="pln"><a href="#n120">120</a></p>
+                <p id="n121" class="pln"><a href="#n121">121</a></p>
+                <p id="n122" class="pln"><a href="#n122">122</a></p>
+                <p id="n123" class="stm run hide_run"><a href="#n123">123</a></p>
+                <p id="n124" class="pln"><a href="#n124">124</a></p>
+                <p id="n125" class="stm run hide_run"><a href="#n125">125</a></p>
+                <p id="n126" class="stm run hide_run"><a href="#n126">126</a></p>
+                <p id="n127" class="pln"><a href="#n127">127</a></p>
+                <p id="n128" class="stm run hide_run"><a href="#n128">128</a></p>
+                <p id="n129" class="stm run hide_run"><a href="#n129">129</a></p>
+                <p id="n130" class="stm run hide_run"><a href="#n130">130</a></p>
+                <p id="n131" class="stm run hide_run"><a href="#n131">131</a></p>
+                <p id="n132" class="stm run hide_run"><a href="#n132">132</a></p>
+                <p id="n133" class="stm run hide_run"><a href="#n133">133</a></p>
+                <p id="n134" class="stm run hide_run"><a href="#n134">134</a></p>
+                <p id="n135" class="stm run hide_run"><a href="#n135">135</a></p>
+                <p id="n136" class="stm run hide_run"><a href="#n136">136</a></p>
+                <p id="n137" class="stm run hide_run"><a href="#n137">137</a></p>
+                <p id="n138" class="pln"><a href="#n138">138</a></p>
+
+            </td>
+            <td class="text">
+                <p id="t1" class="pln"><span class="com"># coding=UTF-8</span><span class="strut">&nbsp;</span></p>
+                <p id="t2" class="pln"><span class="com"># __author__ == ypochien@gmail.com</span><span class="strut">&nbsp;</span>
+                </p>
+                <p id="t3" class="stm run hide_run"><span class="key">import</span> <span class="nam">json</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t4" class="stm run hide_run"><span class="key">from</span> <span class="nam">collections</span>
+                    <span class="key">import</span> <span class="nam">namedtuple</span><span class="strut">&nbsp;</span>
+                </p>
+                <p id="t5" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t6" class="stm run hide_run"><span class="key">import</span> <span class="nam">struct</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t7" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t8" class="stm run hide_run"><span class="key">from</span> <span class="nam">pyT4</span> <span
+                        class="key">import</span> <span class="op">*</span><span class="strut">&nbsp;</span></p>
+                <p id="t9" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t10" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t11" class="stm run hide_run"><span class="key">def</span> <span class="nam">to_utf8</span><span
+                        class="op">(</span><span class="nam">fn</span><span class="op">)</span><span class="op">:</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t12" class="stm run hide_run"><span class="key">def</span> <span
+                        class="nam">with_utf8</span><span class="op">(</span><span class="op">*</span><span class="nam">args</span><span
+                        class="op">,</span> <span class="op">**</span><span class="nam">kwargs</span><span
+                        class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+                <p id="t13" class="stm run hide_run"><span class="nam">msg</span> <span class="op">=</span> <span
+                        class="nam">fn</span><span class="op">(</span><span class="op">*</span><span
+                        class="nam">args</span><span class="op">,</span> <span class="op">**</span><span class="nam">kwargs</span><span
+                        class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t14" class="stm run hide_run"><span class="key">return</span> <span class="nam">msg</span><span
+                        class="op">.</span><span class="nam">decode</span><span class="op">(</span><span class="str">'cp950'</span><span
+                        class="op">)</span><span class="op">.</span><span class="nam">encode</span><span
+                        class="op">(</span><span class="str">'utf8'</span><span class="op">)</span><span class="strut">&nbsp;</span>
+                </p>
+                <p id="t15" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t16" class="stm run hide_run"><span class="key">return</span> <span
+                        class="nam">with_utf8</span><span class="strut">&nbsp;</span></p>
+                <p id="t17" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t18" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t19" class="stm run hide_run"><span class="key">class</span> <span
+                        class="nam">SinopacAPI</span><span class="op">(</span><span class="nam">object</span><span
+                        class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+                <p id="t20" class="stm run hide_run"><span class="nam">ORDER_TYPE_SPOT</span> <span class="op">=</span>
+                    <span class="str">'0'</span> <span class="com"># &#29694;&#32929;</span><span
+                            class="strut">&nbsp;</span></p>
+                <p id="t21" class="stm run hide_run"><span class="nam">ORDER_TYPE_MARGIN</span> <span
+                        class="op">=</span> <span class="str">'3'</span> <span
+                        class="com"># &#34701;&#36039;</span><span class="strut">&nbsp;</span></p>
+                <p id="t22" class="stm run hide_run"><span class="nam">ORDER_TYPE_LOAN</span> <span class="op">=</span>
+                    <span class="str">'4'</span> <span class="com"># &#34701;&#21048;</span><span
+                            class="strut">&nbsp;</span></p>
+                <p id="t23" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t24" class="stm run hide_run"><span class="nam">ORDER_BS_BUY</span> <span class="op">=</span>
+                    <span class="str">'B'</span> <span class="com"># &#36023;&#36914;</span><span
+                            class="strut">&nbsp;</span></p>
+                <p id="t25" class="stm run hide_run"><span class="nam">ORDER_BS_SELL</span> <span class="op">=</span>
+                    <span class="str">'S'</span> <span class="com"># &#36067;&#20986;</span><span
+                            class="strut">&nbsp;</span></p>
+                <p id="t26" class="stm run hide_run"><span class="nam">ORDER_BS_FIRST</span> <span class="op">=</span>
+                    <span class="str">'F'</span> <span class="com"># &#20808;&#36067;</span><span
+                            class="strut">&nbsp;</span></p>
+                <p id="t27" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t28" class="stm run hide_run"><span class="nam">ORDER_SECTION_NORMAL</span> <span
+                        class="op">=</span> <span class="str">'0'</span> <span class="com"># &#19968;&#33324;&#20132;&#26131;</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t29" class="stm run hide_run"><span class="nam">ORDER_SECTION_FIXED</span> <span
+                        class="op">=</span> <span class="str">'P'</span> <span class="com"># &#23450;&#30436;&#20132;&#26131;</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t30" class="stm run hide_run"><span class="nam">ORDER_SECTION_PENNY</span> <span
+                        class="op">=</span> <span class="str">'2'</span> <span
+                        class="com"># &#38646;&#32929;</span><span class="strut">&nbsp;</span></p>
+                <p id="t31" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t32" class="stm run hide_run"><span class="nam">ORDER_FLAG_LIMIT_UP</span> <span
+                        class="op">=</span> <span class="str">'2'</span> <span
+                        class="com"># &#28466;&#20572;</span><span class="strut">&nbsp;</span></p>
+                <p id="t33" class="stm run hide_run"><span class="nam">ORDER_FLAG_LIMIT_NORMAL</span> <span
+                        class="op">=</span> <span class="str">' '</span> <span
+                        class="com"># &#38480;&#20729;</span><span class="strut">&nbsp;</span></p>
+                <p id="t34" class="stm run hide_run"><span class="nam">ORDER_FLAG_LIMIT_DOWN</span> <span
+                        class="op">=</span> <span class="str">'3'</span> <span
+                        class="com"># &#36300;&#20572;</span><span class="strut">&nbsp;</span></p>
+                <p id="t35" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t36" class="stm run hide_run"><span class="key">def</span> <span class="nam">__init__</span><span
+                        class="op">(</span><span class="nam">self</span><span class="op">)</span><span
+                        class="op">:</span><span class="strut">&nbsp;</span></p>
+                <p id="t37" class="stm run hide_run"><span class="nam">self</span><span class="op">.</span><span
+                        class="nam">_accounts</span> <span class="op">=</span> <span class="op">{</span><span
+                        class="op">}</span><span class="strut">&nbsp;</span></p>
+                <p id="t38" class="stm run hide_run"><span class="nam">self</span><span class="op">.</span><span
+                        class="nam">__load_config</span><span class="op">(</span><span class="op">)</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t39" class="stm run hide_run"><span class="nam">self</span><span class="op">.</span><span
+                        class="nam">MakeStockOrder</span> <span class="op">=</span> <span
+                        class="nam">namedtuple</span><span class="op">(</span><span
+                        class="str">'MakeStockOrder'</span><span class="op">,</span> <span class="str">'Order_Type,Stock_ID,Qty,Price'</span><span
+                        class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t40" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t41" class="stm run hide_run"><span class="nam">field</span> <span class="op">=</span> <span
+                        class="str">'trade_type Account stock_id ord_price ord_qty ord_seq ord_date effective_date ord_time ord_no ord_soruce org_ord_seq ord_bs ord_type1 ord_type2 market_id price_type ord_status Msg'</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t42" class="stm run hide_run"><span class="nam">self</span><span class="op">.</span><span
+                        class="nam">StockOrderRecord</span> <span class="op">=</span> <span
+                        class="nam">namedtuple</span><span class="op">(</span><span
+                        class="str">'StockOrderRecord'</span><span class="op">,</span> <span
+                        class="nam">field</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t43" class="stm run hide_run"><span class="nam">self</span><span class="op">.</span><span
+                        class="nam">StockOrderRecordfmt</span> <span class="op">=</span> <span class="str">'2s15s6s6s3s6s8s8s6s5s3s6s1s1s1s1s1s2s60s'</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t44" class="stm run hide_run"><span class="nam">self</span><span class="op">.</span><span
+                        class="nam">StockOrderRecordList</span> <span class="op">=</span> <span class="op">[</span><span
+                        class="op">]</span><span class="strut">&nbsp;</span></p>
+                <p id="t45" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t46" class="stm run hide_run"><span class="key">def</span> <span class="nam">__load_config</span><span
+                        class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">config_json</span><span
+                        class="op">=</span><span class="str">'./config.json'</span><span class="op">)</span><span
+                        class="op">:</span><span class="strut">&nbsp;</span></p>
+                <p id="t47" class="stm run hide_run"><span class="key">with</span> <span class="nam">open</span><span
+                        class="op">(</span><span class="nam">config_json</span><span class="op">)</span> <span
+                        class="key">as</span> <span class="nam">fd_json</span><span class="op">:</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t48" class="stm run hide_run"><span class="nam">self</span><span class="op">.</span><span
+                        class="nam">UserInfo</span> <span class="op">=</span> <span class="nam">json</span><span
+                        class="op">.</span><span class="nam">load</span><span class="op">(</span><span class="nam">fd_json</span><span
+                        class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t49" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t50" class="stm run hide_run"><span class="op">@</span><span class="nam">staticmethod</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t51" class="pln"><span class="key">def</span> <span class="nam">show_version</span><span
+                        class="op">(</span><span class="op">)</span><span class="op">:</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t52" class="stm mis"><span class="key">return</span> <span class="nam">show_version</span><span
+                        class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t53" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t54" class="stm run hide_run"><span class="op">@</span><span class="nam">to_utf8</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t55" class="pln"><span class="key">def</span> <span class="nam">login</span><span
+                        class="op">(</span><span class="nam">self</span><span class="op">)</span><span
+                        class="op">:</span><span class="strut">&nbsp;</span></p>
+                <p id="t56" class="stm run hide_run"><span class="nam">msg</span> <span class="op">=</span> <span
+                        class="nam">init_t4</span><span class="op">(</span><span class="nam">self</span><span
+                        class="op">.</span><span class="nam">UserInfo</span><span class="op">[</span><span class="str">'UserId'</span><span
+                        class="op">]</span><span class="op">,</span> <span class="nam">self</span><span
+                        class="op">.</span><span class="nam">UserInfo</span><span class="op">[</span><span class="str">'Password'</span><span
+                        class="op">]</span><span class="op">,</span> <span class="str">''</span><span
+                        class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t57" class="stm run hide_run"><span class="nam">do_register</span><span class="op">(</span><span
+                        class="num">1</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t58" class="stm run hide_run"><span class="nam">self</span><span class="op">.</span><span
+                        class="nam">__load_account</span><span class="op">(</span><span class="op">)</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t59" class="stm run hide_run"><span class="key">return</span> <span class="nam">msg</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t60" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t61" class="stm run hide_run"><span class="key">def</span> <span
+                        class="nam">show_user</span><span class="op">(</span><span class="nam">self</span><span
+                        class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+                <p id="t62" class="stm mis"><span class="nam">self</span><span class="op">.</span><span class="nam">__load_config</span><span
+                        class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t63" class="stm mis"><span class="key">return</span> <span class="nam">self</span><span
+                        class="op">.</span><span class="nam">UserInfo</span><span class="strut">&nbsp;</span></p>
+                <p id="t64" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t65" class="stm run hide_run"><span class="op">@</span><span class="nam">staticmethod</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t66" class="pln"><span class="key">def</span> <span class="nam">change_echo</span><span
+                        class="op">(</span><span class="op">)</span><span class="op">:</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t67" class="stm mis"><span class="nam">change_echo</span><span class="op">(</span><span
+                        class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t68" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t69" class="stm run hide_run"><span class="op">@</span><span class="nam">staticmethod</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t70" class="pln"><span class="key">def</span> <span class="nam">logout</span><span
+                        class="op">(</span><span class="op">)</span><span class="op">:</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t71" class="stm run hide_run"><span class="nam">log_out</span><span class="op">(</span><span
+                        class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t72" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t73" class="stm run hide_run"><span class="key">def</span> <span
+                        class="nam">MakeStockOrder</span><span class="op">(</span><span class="nam">self</span><span
+                        class="op">,</span> <span class="nam">order_type</span><span class="op">,</span> <span
+                        class="nam">stock_id</span><span class="op">,</span> <span class="nam">qty</span><span
+                        class="op">,</span> <span class="nam">price</span><span class="op">)</span><span
+                        class="op">:</span><span class="strut">&nbsp;</span></p>
+                <p id="t74" class="stm mis"><span class="key">return</span> <span class="nam">self</span><span
+                        class="op">.</span><span class="nam">MakeStockOrder</span><span class="op">.</span><span
+                        class="nam">_make</span><span class="op">(</span><span class="nam">Order_Type</span><span
+                        class="op">=</span><span class="nam">order_type</span><span class="op">,</span> <span
+                        class="nam">Stock_ID</span><span class="op">=</span><span class="nam">stock_id</span><span
+                        class="op">,</span> <span class="nam">Qty</span><span class="op">=</span><span
+                        class="nam">qty</span><span class="op">,</span> <span class="nam">Price</span><span
+                        class="op">=</span><span class="nam">price</span><span class="op">)</span><span class="strut">&nbsp;</span>
+                </p>
+                <p id="t75" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t76" class="stm run hide_run"><span class="key">def</span> <span
+                        class="nam">PlacingOrder</span><span class="op">(</span><span class="nam">self</span><span
+                        class="op">,</span> <span class="nam">order_obj</span><span class="op">)</span><span class="op">:</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t77" class="stm run hide_run"><span class="nam">price</span> <span class="op">=</span> <span
+                        class="nam">order_obj</span><span class="op">.</span><span class="nam">Price</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t78" class="stm run hide_run"><span class="nam">order_type</span> <span class="op">=</span> <span
+                        class="nam">order_obj</span><span class="op">.</span><span class="nam">Order_Type</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t79" class="stm run hide_run"><span class="nam">stock_id</span> <span class="op">=</span> <span
+                        class="nam">order_obj</span><span class="op">.</span><span class="nam">Stock_ID</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t80" class="stm run hide_run"><span class="nam">qty</span> <span class="op">=</span> <span
+                        class="nam">order_obj</span><span class="op">.</span><span class="nam">Qty</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t81" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t82" class="stm run hide_run"><span class="key">if</span> <span class="nam">price</span> <span
+                        class="op">==</span> <span class="nam">None</span><span class="op">:</span><span class="strut">&nbsp;</span>
+                </p>
+                <p id="t83" class="stm run hide_run"><span class="nam">_price</span> <span class="op">=</span> <span
+                        class="str">' '</span><span class="strut">&nbsp;</span></p>
+                <p id="t84" class="stm run hide_run"><span class="nam">_price_type</span> <span class="op">=</span>
+                    <span class="str">'2'</span><span class="strut">&nbsp;</span></p>
+                <p id="t85" class="pln"><span class="key">else</span><span class="op">:</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t86" class="stm run hide_run"><span class="nam">_price</span> <span class="op">=</span> <span
+                        class="nam">price</span><span class="strut">&nbsp;</span></p>
+                <p id="t87" class="stm run hide_run"><span class="nam">_price_type</span> <span class="op">=</span>
+                    <span class="str">' '</span><span class="strut">&nbsp;</span></p>
+                <p id="t88" class="stm run hide_run"><span class="nam">_price</span> <span class="op">=</span> <span
+                        class="nam">str</span><span class="op">(</span><span class="nam">_price</span><span
+                        class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t89" class="stm run hide_run"><span class="nam">_ord_type</span> <span class="op">=</span> <span
+                        class="str">'0'</span> <span class="op">+</span> <span class="nam">order_type</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t90" class="stm run hide_run"><span class="nam">_bs</span> <span class="op">=</span> <span
+                        class="str">'B'</span> <span class="key">if</span> <span class="nam">qty</span> <span
+                        class="op">></span> <span class="num">0</span> <span class="key">else</span> <span class="str">'S'</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t91" class="stm run hide_run"><span class="nam">_qty</span> <span class="op">=</span> <span
+                        class="nam">str</span><span class="op">(</span><span class="nam">abs</span><span
+                        class="op">(</span><span class="nam">qty</span><span class="op">)</span><span
+                        class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t92" class="stm run hide_run"><span class="nam">raw_record</span> <span class="op">=</span> <span
+                        class="nam">stock_order</span><span class="op">(</span><span class="nam">_bs</span><span
+                        class="op">,</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_accounts</span><span
+                        class="op">[</span><span class="str">'S'</span><span class="op">]</span><span
+                        class="op">[</span><span class="str">'branch'</span><span class="op">]</span><span
+                        class="op">,</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_accounts</span><span
+                        class="op">[</span><span class="str">'S'</span><span class="op">]</span><span
+                        class="op">[</span><span class="str">'account'</span><span class="op">]</span><span
+                        class="op">,</span> <span class="nam">stock_id</span><span class="op">,</span> <span
+                        class="nam">_ord_type</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+                <p id="t93" class="pln"><span class="nam">_price</span><span class="op">,</span> <span
+                        class="nam">_qty</span><span class="op">,</span> <span class="nam">_price_type</span><span
+                        class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t94" class="stm run hide_run"><span class="key">if</span> <span class="str">'Error'</span> <span
+                        class="key">in</span> <span class="nam">raw_record</span><span class="op">:</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t95" class="stm mis"><span class="key">print</span> <span class="nam">raw_record</span><span
+                        class="op">.</span><span class="nam">decode</span><span class="op">(</span><span class="str">'cp950'</span><span
+                        class="op">)</span><span class="op">.</span><span class="nam">encode</span><span
+                        class="op">(</span><span class="str">'utf8'</span><span class="op">)</span><span class="strut">&nbsp;</span>
+                </p>
+                <p id="t96" class="stm mis"><span class="key">return</span> <span class="nam">None</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t97" class="stm run hide_run"><span class="nam">stock_order_record</span> <span
+                        class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_make_stock_order_record</span><span
+                        class="op">(</span><span class="nam">raw_record</span><span class="op">)</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t98" class="stm run hide_run"><span class="nam">self</span><span class="op">.</span><span
+                        class="nam">StockOrderRecordList</span><span class="op">.</span><span
+                        class="nam">append</span><span class="op">(</span><span
+                        class="nam">stock_order_record</span><span class="op">)</span><span class="strut">&nbsp;</span>
+                </p>
+                <p id="t99" class="stm run hide_run"><span class="key">return</span> <span class="nam">stock_order_record</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t100" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t101" class="stm run hide_run"><span class="key">def</span> <span
+                        class="nam">CancelOrder</span><span class="op">(</span><span class="nam">self</span><span
+                        class="op">,</span> <span class="nam">stock_order_record</span><span class="op">)</span><span
+                        class="op">:</span><span class="strut">&nbsp;</span></p>
+                <p id="t102" class="pln"><span class="com"># stock_order_record = self.StockOrderRecord</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t103" class="stm run hide_run"><span class="nam">bs</span> <span class="op">=</span> <span
+                        class="nam">stock_order_record</span><span class="op">.</span><span
+                        class="nam">ord_bs</span><span class="strut">&nbsp;</span></p>
+                <p id="t104" class="stm run hide_run"><span class="nam">branch</span> <span class="op">=</span> <span
+                        class="nam">stock_order_record</span><span class="op">.</span><span
+                        class="nam">Account</span><span class="op">[</span><span class="num">1</span><span
+                        class="op">:</span><span class="num">7</span><span class="op">]</span><span
+                        class="op">.</span><span class="nam">strip</span><span class="op">(</span><span
+                        class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t105" class="stm run hide_run"><span class="nam">account</span> <span class="op">=</span> <span
+                        class="nam">stock_order_record</span><span class="op">.</span><span
+                        class="nam">Account</span><span class="op">[</span><span class="num">7</span><span
+                        class="op">:</span><span class="num">15</span><span class="op">]</span><span class="op">.</span><span
+                        class="nam">strip</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span>
+                </p>
+                <p id="t106" class="stm run hide_run"><span class="nam">stock_id</span> <span class="op">=</span> <span
+                        class="nam">stock_order_record</span><span class="op">.</span><span
+                        class="nam">stock_id</span><span class="op">.</span><span class="nam">strip</span><span
+                        class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t107" class="stm run hide_run"><span class="nam">ord_type</span> <span class="op">=</span> <span
+                        class="nam">stock_order_record</span><span class="op">.</span><span class="nam">ord_type1</span>
+                    <span class="op">+</span> <span class="nam">stock_order_record</span><span class="op">.</span><span
+                            class="nam">ord_type2</span><span class="strut">&nbsp;</span></p>
+                <p id="t108" class="stm run hide_run"><span class="nam">ord_seq</span> <span class="op">=</span> <span
+                        class="nam">stock_order_record</span><span class="op">.</span><span
+                        class="nam">ord_seq</span><span class="strut">&nbsp;</span></p>
+                <p id="t109" class="stm run hide_run"><span class="nam">ord_no</span> <span class="op">=</span> <span
+                        class="nam">stock_order_record</span><span class="op">.</span><span
+                        class="nam">ord_no</span><span class="strut">&nbsp;</span></p>
+                <p id="t110" class="stm run hide_run"><span class="nam">pre_order</span> <span class="op">=</span> <span
+                        class="str">' '</span> <span class="key">if</span> <span class="nam">int</span><span class="op">(</span><span
+                        class="nam">ord_no</span><span class="op">)</span> <span class="op">==</span> <span class="num">0</span>
+                    <span class="key">else</span> <span class="str">'N'</span><span class="strut">&nbsp;</span></p>
+                <p id="t111" class="stm run hide_run"><span class="nam">raw_record</span> <span class="op">=</span>
+                    <span class="nam">stock_cancel</span><span class="op">(</span><span class="nam">bs</span><span
+                            class="op">,</span> <span class="nam">branch</span><span class="op">,</span> <span
+                            class="nam">account</span><span class="op">,</span> <span class="nam">stock_id</span><span
+                            class="op">,</span> <span class="nam">ord_type</span><span class="op">,</span> <span
+                            class="nam">ord_seq</span><span class="op">,</span> <span class="nam">ord_no</span><span
+                            class="op">,</span> <span class="nam">pre_order</span><span class="op">)</span><span
+                            class="strut">&nbsp;</span></p>
+                <p id="t112" class="stm run hide_run"><span class="key">if</span> <span class="str">'Error'</span> <span
+                        class="key">in</span> <span class="nam">raw_record</span><span class="op">:</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t113" class="stm mis"><span class="key">print</span> <span class="nam">raw_record</span><span
+                        class="op">.</span><span class="nam">decode</span><span class="op">(</span><span class="str">'cp950'</span><span
+                        class="op">)</span><span class="op">.</span><span class="nam">encode</span><span
+                        class="op">(</span><span class="str">'utf8'</span><span class="op">)</span><span class="strut">&nbsp;</span>
+                </p>
+                <p id="t114" class="stm mis"><span class="key">return</span> <span class="nam">None</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t115" class="stm run hide_run"><span class="nam">stock_cancel_record</span> <span
+                        class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_make_stock_order_record</span><span
+                        class="op">(</span><span class="nam">raw_record</span><span class="op">)</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t116" class="stm run hide_run"><span class="nam">self</span><span class="op">.</span><span
+                        class="nam">StockOrderRecordList</span><span class="op">.</span><span
+                        class="nam">append</span><span class="op">(</span><span
+                        class="nam">stock_cancel_record</span><span class="op">)</span><span class="strut">&nbsp;</span>
+                </p>
+                <p id="t117" class="stm run hide_run"><span class="key">return</span> <span class="nam">stock_cancel_record</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t118" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t119" class="stm run hide_run"><span class="key">def</span> <span class="nam">_make_stock_order_record</span><span
+                        class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">raw_record</span><span
+                        class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+                <p id="t120" class="pln"><span
+                        class="str">"""stock_order_reply_record to StockOrderRecord struct."""</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t121" class="pln"><span class="com"># record = '01S9A95   98093152890  000000001360514201611102016111123171300000152000000B00S200&#22996;&#35351;&#34389;&#29702;&#20013;,</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t122" class="pln"><span class="com"># &#35531;&#26044;&#20132;&#26131;&#26178;&#38291;&#30906;&#35469;&#22996;&#35351;&#29376;&#24907;!                       '</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t123" class="stm run hide_run"><span class="key">return</span> <span class="nam">self</span><span
+                        class="op">.</span><span class="nam">StockOrderRecord</span><span class="op">.</span><span
+                        class="nam">_make</span><span class="op">(</span><span class="nam">struct</span><span
+                        class="op">.</span><span class="nam">unpack_from</span><span class="op">(</span><span
+                        class="nam">self</span><span class="op">.</span><span
+                        class="nam">StockOrderRecordfmt</span><span class="op">,</span> <span
+                        class="nam">raw_record</span><span class="op">)</span><span class="op">)</span><span
+                        class="strut">&nbsp;</span></p>
+                <p id="t124" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t125" class="stm run hide_run"><span class="key">def</span> <span
+                        class="nam">GetAccount</span><span class="op">(</span><span class="nam">self</span><span
+                        class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+                <p id="t126" class="stm run hide_run"><span class="key">return</span> <span class="nam">self</span><span
+                        class="op">.</span><span class="nam">_accounts</span><span class="strut">&nbsp;</span></p>
+                <p id="t127" class="pln"><span class="strut">&nbsp;</span></p>
+                <p id="t128" class="stm run hide_run"><span class="key">def</span> <span
+                        class="nam">__load_account</span><span class="op">(</span><span class="nam">self</span><span
+                        class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+                <p id="t129" class="stm run hide_run"><span class="nam">account_list</span> <span class="op">=</span>
+                    <span class="nam">show_list2</span><span class="op">(</span><span class="op">)</span><span
+                            class="op">.</span><span class="nam">split</span><span class="op">(</span><span class="str">'\n'</span><span
+                            class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t130" class="stm run hide_run"><span class="key">for</span> <span class="nam">i</span><span
+                        class="op">,</span> <span class="nam">account</span> <span class="key">in</span> <span
+                        class="nam">enumerate</span><span class="op">(</span><span class="nam">account_list</span><span
+                        class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+                <p id="t131" class="stm run hide_run"><span class="key">if</span> <span class="nam">len</span><span
+                        class="op">(</span><span class="nam">account</span><span class="op">)</span> <span
+                        class="op">==</span> <span class="num">0</span><span class="op">:</span><span class="strut">&nbsp;</span>
+                </p>
+                <p id="t132" class="stm run hide_run"><span class="key">continue</span><span class="strut">&nbsp;</span>
+                </p>
+                <p id="t133" class="stm run hide_run"><span class="nam">acc_type</span> <span class="op">=</span> <span
+                        class="nam">account</span><span class="op">[</span><span class="num">0</span><span
+                        class="op">]</span><span class="strut">&nbsp;</span></p>
+                <p id="t134" class="stm run hide_run"><span class="nam">acc_items</span> <span class="op">=</span> <span
+                        class="nam">account</span><span class="op">[</span><span class="num">1</span><span
+                        class="op">:</span><span class="op">]</span><span class="op">.</span><span
+                        class="nam">split</span><span class="op">(</span><span class="str">'-'</span><span
+                        class="op">)</span><span class="strut">&nbsp;</span></p>
+                <p id="t135" class="stm run hide_run"><span class="nam">acc_branch</span><span class="op">,</span> <span
+                        class="nam">acc_account</span><span class="op">,</span> <span class="nam">acc_name</span> <span
+                        class="op">=</span> <span class="nam">acc_items</span><span class="op">[</span><span
+                        class="num">0</span><span class="op">]</span><span class="op">,</span> <span class="nam">acc_items</span><span
+                        class="op">[</span><span class="num">1</span><span class="op">]</span><span class="op">,</span>
+                    <span class="nam">acc_items</span><span class="op">[</span><span class="num">2</span><span
+                            class="op">]</span><span class="strut">&nbsp;</span></p>
+                <p id="t136" class="stm run hide_run"><span class="nam">self</span><span class="op">.</span><span
+                        class="nam">_accounts</span><span class="op">[</span><span class="nam">acc_type</span><span
+                        class="op">]</span> <span class="op">=</span> <span class="op">{</span><span class="str">'branch'</span><span
+                        class="op">:</span> <span class="nam">acc_branch</span><span class="op">,</span> <span
+                        class="str">'account'</span><span class="op">:</span> <span class="nam">acc_account</span><span
+                        class="op">,</span> <span class="str">'name'</span><span class="op">:</span> <span class="nam">acc_name</span><span
+                        class="op">}</span><span class="strut">&nbsp;</span></p>
+                <p id="t137" class="stm run hide_run"><span class="nam">add_acc_ca</span><span class="op">(</span><span
+                        class="nam">acc_branch</span><span class="op">,</span> <span class="nam">acc_account</span><span
+                        class="op">,</span> <span class="nam">self</span><span class="op">.</span><span class="nam">UserInfo</span><span
+                        class="op">[</span><span class="str">'UserId'</span><span class="op">]</span><span
+                        class="op">,</span> <span class="nam">self</span><span class="op">.</span><span class="nam">UserInfo</span><span
+                        class="op">[</span><span class="str">'eKey'</span><span class="op">]</span><span
+                        class="op">,</span><span class="strut">&nbsp;</span></p>
+                <p id="t138" class="pln"><span class="nam">self</span><span class="op">.</span><span class="nam">UserInfo</span><span
+                        class="op">[</span><span class="str">'eKeyPassword'</span><span class="op">]</span><span
+                        class="op">)</span><span class="strut">&nbsp;</span></p>
+
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="footer">
+    <div class="content">
+        <p>
+            <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav"
+                                                                               href="https://coverage.readthedocs.io">coverage.py
+            v4.2</a>,
+            created at 2016-11-11 02:49
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
