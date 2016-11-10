@@ -6,6 +6,14 @@ from collections import namedtuple
 from pyT4 import *
 
 
+def to_utf8(fn):
+    def with_utf8(*args, **kwargs):
+        msg = fn(*args, **kwargs)
+        return msg.decode('cp950').encode('utf8')
+
+    return with_utf8
+
+
 class SinopacAPI(object):
     ORDER_TYPE_SPOT = '0'  # 現股
     ORDER_TYPE_MARGIN = '3'  # 融資
@@ -36,10 +44,12 @@ class SinopacAPI(object):
     def show_version():
         return show_version()
 
+    @to_utf8
     def login(self):
         msg = init_t4(self.UserInfo['UserId'], self.UserInfo['Password'], '')
+        do_register(1)
         self.load_account()
-        return msg.decode('cp950').encode('utf8')
+        return msg
 
     def show_user(self):
         self._load_config()
@@ -56,6 +66,7 @@ class SinopacAPI(object):
     def MakeStockOrder(self, order_type, stock_id, qty, price):
         return self.MakeStockOrder._make(Order_Type=order_type, Stock_ID=stock_id, Qty=qty, Price=price)
 
+    @to_utf8
     def placeOrder(self, order_obj):
         price = order_obj.Price
         order_type = order_obj.Order_Type
@@ -74,8 +85,9 @@ class SinopacAPI(object):
         _qty = str(abs(qty))
         msg = stock_order(_bs, self.accounts['S']['branch'], self.accounts['S']['account'], stock_id, _ord_type, _price,
                           _qty, _price_type)
-        return '\n' + msg.decode('cp950').encode('utf8')
+        return msg
 
+    @to_utf8
     def order_stock(self, type, section, flag, bs, stock, price, qty):
         ord_type = section + type
         if section == SinopacAPI.ORDER_SECTION_PENNY:
@@ -83,7 +95,7 @@ class SinopacAPI(object):
 
         msg = stock_order(bs, self.accounts['S']['branch'], self.accounts['S']['account'], stock, ord_type, price, qty,
                           flag)
-        return '\n' + msg.decode('cp950').encode('utf8')
+        return msg
 
     def load_account(self):
         account_list = show_list2().split('\n')
