@@ -47,7 +47,18 @@ class TestSinopacAPI(TestCase):
         '''Test PlacingOrder(Type,Stock,Qty,Price)'''
         order_object = self.api.MakeStockOrder(order_type, stock_id, qty, price)
         actual = self.api.placeOrder(order_object)
+        print '[{}]'.format(actual)
         self.assertIn(expected, actual)
+
+    def test_order_return_format(self):
+        record = '01S9A95   98093152890  000000001360514201611102016111123171300000152000000B00S200' \
+                 '委託處理中, 請於交易時間確認委託狀態!                       '.decode('utf8').encode('cp950')
+        expected = len(record)
+        self.assertEqual(141, expected)
+        stock_order_record = self.api.make_stock_order_record(record)
+        print stock_order_record
+        expected = 'S9A95   9809315'
+        self.assertEqual(expected, stock_order_record.Account)
 
     def test_account_list(self):
         '''設定並且登入正常，會有一組帳號以上，否則請檢查t4的設定'''

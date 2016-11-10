@@ -3,6 +3,8 @@
 import json
 from collections import namedtuple
 
+import struct
+
 from pyT4 import *
 
 
@@ -86,6 +88,15 @@ class SinopacAPI(object):
         msg = stock_order(_bs, self.accounts['S']['branch'], self.accounts['S']['account'], stock_id, _ord_type, _price,
                           _qty, _price_type)
         return msg
+
+    def make_stock_order_record(self, raw_record):
+        """stock_order_reply_record to StockOrderRecord struct."""
+        # record = '01S9A95   98093152890  000000001360514201611102016111123171300000152000000B00S200委託處理中,
+        # 請於交易時間確認委託狀態!                       '
+        fmt = '2s15s6s6s3s6s8s8s6s5s3s6s1s1s1s1s1s2s60s'
+        field = 'trade_type Account stock_id ord_price ord_qty ord_seq ord_date effective_date ord_time ord_no ord_soruce org_ord_seq ord_bs ord_type1 ord_type2 market_id price_type ord_status Msg'
+        StockOrderRecord = namedtuple('StockOrderRecord', field)
+        return StockOrderRecord._make(struct.unpack_from(fmt, raw_record))
 
     def load_account(self):
         account_list = show_list2().split('\n')
