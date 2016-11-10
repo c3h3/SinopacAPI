@@ -27,6 +27,9 @@ ref : [永豐金API元件下單](http://www.sinotrade.com.tw/ec/eleader1/API.htm
 * 委託刪除封裝
 
 
+###Run Test
+    $ nosetests -sv --with-cover --cover-html
+
 **Any Question?**
 
         ypochien (at) gmail.com
