@@ -1,4 +1,4 @@
-# SinopacAPI |Docs| |Build Status| |codecov.io|
+# SinopacAPI |Build Status|
 =========================================
 
 
