@@ -31,11 +31,11 @@ class TestSinopacAPI(TestCase):
                     'eKeyPassword': ''}
         self.assertDictEqual(expected, actual)
 
-    @parameterized.expand([('01S', SinopacAPI.ORDER_TYPE_SPOT, "2890", -1)
+    @parameterized.expand([('01S', SinopacAPI.ORDER_TYPE_SPOT, "2890", 1)
                               , ('02S', SinopacAPI.ORDER_TYPE_SPOT, "2890", -1)
+                              , ('01S', SinopacAPI.ORDER_TYPE_MARGIN, "2890", 2)
                               , ('02S', SinopacAPI.ORDER_TYPE_MARGIN, "2890", -2)
-                              , ('01S', SinopacAPI.ORDER_TYPE_MARGIN, "2890", -2)
-                              , ('01S', SinopacAPI.ORDER_TYPE_LOAN, "2890", -3)
+                              , ('01S', SinopacAPI.ORDER_TYPE_LOAN, "2890", 3)
                               , ('02S', SinopacAPI.ORDER_TYPE_LOAN, "2890", -3)
                               , ('01S', SinopacAPI.ORDER_TYPE_SPOT, "2890", 4, 8.10)
                               , ('01S', SinopacAPI.ORDER_TYPE_MARGIN, "2890", 5, 8.11)
@@ -66,10 +66,8 @@ class TestSinopacAPI(TestCase):
 
     def test_account_list(self):
         actual = self.api
-        print 'Account counts:', len(actual.accounts)
-        for item in actual.accounts.items():
-            print item
-        self.assertEqual(1,1)
+        account_size = len(actual.accounts)
+        self.assertGreater(account_size, 0, 'Account not found. Plz check t4/log.')
 
     @skip("login skipping")
     def test_no_auth_login(self):
