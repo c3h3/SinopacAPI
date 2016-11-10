@@ -31,3 +31,6 @@ ref : [永豐金API元件下單](http://www.sinotrade.com.tw/ec/eleader1/API.htm
 **Any Question?**
 
         ypochien (at) gmail.com
+
+.. |Build Status| image:: https://travis-ci.org/ypochien/SinopacAPI.svg
+   :target: https://travis-ci.org/ypochien/SinopacAPI
