@@ -87,16 +87,6 @@ class SinopacAPI(object):
                           _qty, _price_type)
         return msg
 
-    @to_utf8
-    def order_stock(self, type, section, flag, bs, stock, price, qty):
-        ord_type = section + type
-        if section == SinopacAPI.ORDER_SECTION_PENNY:
-            ord_type = '20'
-
-        msg = stock_order(bs, self.accounts['S']['branch'], self.accounts['S']['account'], stock, ord_type, price, qty,
-                          flag)
-        return msg
-
     def load_account(self):
         account_list = show_list2().split('\n')
         for i, account in enumerate(account_list):
