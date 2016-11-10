@@ -1,7 +1,8 @@
 # SinopacAPI ![永豐金證券LOGO](http://www.sinotrade.com.tw/Images/logo.png)
 
 
-![](https://travis-ci.org/ypochien/SinopacAPI.svg)
+[![Coverage Status](https://coveralls.io/repos/github/ypochien/SinopacAPI/badge.svg)](https://www.alvin.tw/cover/)
+
 
 #### Sinopac Securities Order API Wrapper by Python.
 
@@ -25,7 +26,7 @@ ref : [永豐金API元件下單](http://www.sinotrade.com.tw/ec/eleader1/API.htm
 * 委託下單封裝
 * 回報處理
 * 委託刪除封裝
-
+* 研究一下，Windows版本可否使用線上CI與測試的玩具
 
 ###Run Test
     $ nosetests -sv --with-cover --cover-html
