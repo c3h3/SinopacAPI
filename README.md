@@ -1,4 +1,6 @@
-# SinopacAPI
+# SinopacAPI |Docs| |Build Status| |codecov.io|
+=========================================
+
 
 ![永豐金證券LOGO](http://www.sinotrade.com.tw/Images/logo.png)
 
