@@ -10,6 +10,15 @@ from SinopacAPI import SinopacAPI
 
 
 class TestSinopacAPI(TestCase):
+    '''
+        # Arrange
+        expected = '初始化成功'
+        # Act
+        actual = self.api.login()
+        # Assert
+        assert
+    '''
+
     @classmethod
     def setUpClass(cls):
         super(TestSinopacAPI, cls).setUpClass()
@@ -24,13 +33,6 @@ class TestSinopacAPI(TestCase):
     def setUp(self):
         self.api = TestSinopacAPI.api
 
-    @skip('no personal info')
-    def test_verify_config_json_file(self):
-        actual = self.api.show_user()
-        expected = {'UserId': '', 'Password': '', 'eKey': 'C:/ekey/551/',
-                    'eKeyPassword': ''}
-        self.assertDictEqual(expected, actual)
-
     @parameterized.expand([('01S', SinopacAPI.ORDER_TYPE_SPOT, "2890", 1)
                               , ('02S', SinopacAPI.ORDER_TYPE_SPOT, "2890", -1)
                               , ('01S', SinopacAPI.ORDER_TYPE_MARGIN, "2890", 2)
@@ -42,40 +44,13 @@ class TestSinopacAPI(TestCase):
                               , ('01S', SinopacAPI.ORDER_TYPE_LOAN, "2890", 6, 8.12)
                               , ('02S', SinopacAPI.ORDER_TYPE_MARGIN, "2890", -7, 8.13)])
     def test_make_order_TYPE_STOCK_QTY_and_at_market(self, expected, order_type, stock_id, qty, price=None):
-        # '''測試下單-現股、融資、融券 + 買進、賣出 + 限價、市價'''
+        '''Test PlacingOrder(Type,Stock,Qty,Price)'''
         order_object = self.api.MakeStockOrder(order_type, stock_id, qty, price)
         actual = self.api.placeOrder(order_object)
         self.assertIn(expected, actual)
 
-    @skip("no impl")
-    def test_cancel_all_orders(self):
-        actual = self.api.calcel_all()
-        expected = '01S'
-        self.assertIn(expected, actual)
-
-    @skip("login skipping")
-    def test_normal_login(self):
-        # Arrange
-        expected = '初始化成功'
-
-        # Act
-        actual = self.api.login()
-
-        # Assert
-        self.assertEqual(expected, actual, 0)
-
     def test_account_list(self):
+        '''設定並且登入正常，會有一組帳號以上，否則請檢查t4的設定'''
         actual = self.api
         account_size = len(actual.accounts)
-        self.assertGreater(account_size, 0, 'Account not found. Plz check t4/log.')
-
-    @skip("login skipping")
-    def test_no_auth_login(self):
-        # Arrange
-        expected = 'Error'
-
-        # Act
-        actual = self.api.login()
-
-        # Assert
-        self.assertIn(expected, actual)
+        self.assertGreater(account_size, 0, 'Account not found. Plz check t4.ini and t4.log')
