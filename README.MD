@@ -1,13 +1,12 @@
-# SinopacAPI |Build Status|
-=========================================
+# SinopacAPI ![永豐金證券LOGO](http://www.sinotrade.com.tw/Images/logo.png)
 
 
-![永豐金證券LOGO](http://www.sinotrade.com.tw/Images/logo.png)
+![](https://travis-ci.org/ypochien/SinopacAPI.svg)
 
-Sinopac Securities Order API Wrapper by Python.
+#### Sinopac Securities Order API Wrapper by Python.
 
 ref : [永豐金API元件下單](http://www.sinotrade.com.tw/ec/eleader1/API.htm)
- 
+
 ###Usage
 1. Download T4 API.
 1. Download this project with T4 Path 
@@ -32,5 +31,3 @@ ref : [永豐金API元件下單](http://www.sinotrade.com.tw/ec/eleader1/API.htm
 
         ypochien (at) gmail.com
 
-.. |Build Status| image:: https://travis-ci.org/ypochien/SinopacAPI.svg
-   :target: https://travis-ci.org/ypochien/SinopacAPI
