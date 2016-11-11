@@ -29,8 +29,8 @@ coverage.wire_up_help_panel = function () {
         var koff = $("#keyboard_icon").offset();
         var poff = $("#panel_icon").position();
         $(".help_panel").offset({
-            top: koff.top - poff.top,
-            left: koff.left - poff.left
+            top: koff.top-poff.top,
+            left: koff.left-poff.left
         });
     });
     $("#panel_icon").click(function () {
@@ -213,11 +213,11 @@ coverage.index_ready = function ($) {
     var headers = [];
     var col_count = $("table.index > thead > tr > th").length;
 
-    headers[0] = {sorter: 'text'};
-    for (i = 1; i < col_count - 1; i++) {
-        headers[i] = {sorter: 'digit'};
+    headers[0] = { sorter: 'text' };
+    for (i = 1; i < col_count-1; i++) {
+        headers[i] = { sorter: 'digit' };
     }
-    headers[col_count - 1] = {sorter: 'percent'};
+    headers[col_count-1] = { sorter: 'percent' };
 
     // Enable the table sorter:
     $("table.index").tablesorter({
@@ -253,20 +253,12 @@ coverage.pyfile_ready = function ($) {
         .bind('keydown', 'k', coverage.to_prev_chunk_nicely)
         .bind('keydown', '0', coverage.to_top)
         .bind('keydown', '1', coverage.to_first_chunk)
-    ;
+        ;
 
-    $(".button_toggle_run").click(function (evt) {
-        coverage.toggle_lines(evt.target, "run");
-    });
-    $(".button_toggle_exc").click(function (evt) {
-        coverage.toggle_lines(evt.target, "exc");
-    });
-    $(".button_toggle_mis").click(function (evt) {
-        coverage.toggle_lines(evt.target, "mis");
-    });
-    $(".button_toggle_par").click(function (evt) {
-        coverage.toggle_lines(evt.target, "par");
-    });
+    $(".button_toggle_run").click(function (evt) {coverage.toggle_lines(evt.target, "run");});
+    $(".button_toggle_exc").click(function (evt) {coverage.toggle_lines(evt.target, "exc");});
+    $(".button_toggle_mis").click(function (evt) {coverage.toggle_lines(evt.target, "mis");});
+    $(".button_toggle_par").click(function (evt) {coverage.toggle_lines(evt.target, "par");});
 
     coverage.assign_shortkeys();
     coverage.wire_up_help_panel();
@@ -279,13 +271,13 @@ coverage.pyfile_ready = function ($) {
 
 coverage.toggle_lines = function (btn, cls) {
     btn = $(btn);
-    var hide = "hide_" + cls;
+    var hide = "hide_"+cls;
     if (btn.hasClass(hide)) {
-        $("#source ." + cls).removeClass(hide);
+        $("#source ."+cls).removeClass(hide);
         btn.removeClass(hide);
     }
     else {
-        $("#source ." + cls).addClass(hide);
+        $("#source ."+cls).addClass(hide);
         btn.addClass(hide);
     }
 };
@@ -310,7 +302,7 @@ coverage.set_sel = function (b, e) {
     // The first line selected.
     coverage.sel_begin = b;
     // The next line not selected.
-    coverage.sel_end = (e === undefined) ? b + 1 : e;
+    coverage.sel_end = (e === undefined) ? b+1 : e;
 };
 
 coverage.to_top = function () {
@@ -364,7 +356,7 @@ coverage.to_prev_chunk = function () {
     var c = coverage;
 
     // Find the end of the prev colored chunk.
-    var probe = c.sel_begin - 1;
+    var probe = c.sel_begin-1;
     var probe_line = c.line_elt(probe);
     if (probe_line.length === 0) {
         return;
@@ -380,7 +372,7 @@ coverage.to_prev_chunk = function () {
     }
 
     // There's a prev chunk, `probe` points to its last line.
-    var end = probe + 1;
+    var end = probe+1;
 
     // Find the beginning of this chunk.
     var prev_color = color;
@@ -389,7 +381,7 @@ coverage.to_prev_chunk = function () {
         probe_line = c.line_elt(probe);
         prev_color = probe_line.css("background-color");
     }
-    c.set_sel(probe + 1, end);
+    c.set_sel(probe+1, end);
     c.show_selection();
 };
 
@@ -423,7 +415,7 @@ coverage.selection_ends_on_screen = function () {
     }
 
     var top = coverage.line_elt(coverage.sel_begin);
-    var next = coverage.line_elt(coverage.sel_end - 1);
+    var next = coverage.line_elt(coverage.sel_end-1);
 
     return (
         (top.isOnScreen() ? 1 : 0) +
