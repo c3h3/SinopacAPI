@@ -13,11 +13,13 @@ api.login()
 order_object = api.MakeStockOrder(SinopacAPI.ORDER_TYPE_SPOT, "2890", 3, 8.76)
 
 # 執行下單
-actual = api.PlacingOrder(order_object)
-if actual != None:
-    print '下單回報:'+ ','.join(actual[:-1]) + ',' + actual[-1].strip().decode('cp950').encode('utf8')
-actual = api.CancelOrder(actual)
-if actual != None:
-    print '刪單回報:'+ ','.join(actual[:-1]) + ',' + actual[-1].strip().decode('cp950').encode('utf8')
+order_stock_record = api.PlacingOrder(order_object)
+print '下單回報:' + ','.join(order_stock_record[:-1]) + ',' + order_stock_record[-1].strip().decode('cp950').encode('utf8')
+
+cancel_stock_record = api.CancelOrder(order_stock_record)
+
+if cancel_stock_record is not None:
+    print '刪單回報:' + ','.join(cancel_stock_record[:-1]) + ',' + cancel_stock_record[-1].strip().decode('cp950').encode(
+        'utf8')
 # 登出
 api.logout()

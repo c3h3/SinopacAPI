@@ -1,101 +1,5 @@
 {
   "files": {
-    "encodings_ascii_py": {
-      "index": {
-        "relative_filename": "encodings\\ascii.py",
-        "html_filename": "encodings_ascii_py.html",
-        "nums": [
-          1,
-          19,
-          0,
-          19,
-          0,
-          0,
-          0
-        ]
-      },
-      "hash": "4fd0b4948b46ce18cae6e520ce214bda"
-    },
-    "nose_parameterized_py": {
-      "index": {
-        "relative_filename": "nose_parameterized.py",
-        "html_filename": "nose_parameterized_py.html",
-        "nums": [
-          1,
-          1,
-          0,
-          1,
-          0,
-          0,
-          0
-        ]
-      },
-      "hash": "f88934437307b40ec4fc271da70693bc"
-    },
-    "ctypes_wintypes_py": {
-      "index": {
-        "relative_filename": "ctypes\\wintypes.py",
-        "html_filename": "ctypes_wintypes_py.html",
-        "nums": [
-          1,
-          98,
-          0,
-          98,
-          0,
-          0,
-          0
-        ]
-      },
-      "hash": "4e6428106e6c364ae96c8b97007b0739"
-    },
-    "ctypes_py": {
-      "index": {
-        "relative_filename": "ctypes.py",
-        "html_filename": "ctypes_py.html",
-        "nums": [
-          1,
-          340,
-          0,
-          340,
-          0,
-          0,
-          0
-        ]
-      },
-      "hash": "e77e03dfe2731763e9ffdcb8a9449ff5"
-    },
-    "ctypes__endian_py": {
-      "index": {
-        "relative_filename": "ctypes\\_endian.py",
-        "html_filename": "ctypes__endian_py.html",
-        "nums": [
-          1,
-          35,
-          0,
-          35,
-          0,
-          0,
-          0
-        ]
-      },
-      "hash": "aaa1f002bfc8883781e83a141f7ce619"
-    },
-    "nose_parameterized_parameterized_py": {
-      "index": {
-        "relative_filename": "nose_parameterized\\parameterized.py",
-        "html_filename": "nose_parameterized_parameterized_py.html",
-        "nums": [
-          1,
-          177,
-          0,
-          177,
-          0,
-          0,
-          0
-        ]
-      },
-      "hash": "e8f1ca1d47c8a0a9c4500814c1ad0428"
-    },
     "SinopacAPI_py": {
       "index": {
         "relative_filename": "SinopacAPI.py",
@@ -111,25 +15,9 @@
         ]
       },
       "hash": "aa100b6fb538da803b98f934a0d58676"
-    },
-    "pyT4_py": {
-      "index": {
-        "relative_filename": "pyT4.py",
-        "html_filename": "pyT4_py.html",
-        "nums": [
-          1,
-          118,
-          0,
-          3,
-          0,
-          0,
-          0
-        ]
-      },
-      "hash": "2287da886ee1fc92bbbe460c42fd0fbe"
     }
   },
   "version": "4.2",
-  "settings": "4f3c153c6fd144e47051c1600aed320f",
+  "settings": "10e0c9334141f311f5143b18b7eebefb",
   "format": 1
 }
