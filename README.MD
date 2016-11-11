@@ -12,7 +12,7 @@ ref : [永豐金API元件下單](http://www.sinotrade.com.tw/ec/eleader1/API.htm
 1. Download T4 API.
 1. Download this project with T4 Path 
 1. modify config.json
-    
+
         {
             "UserId": "",   #T4_User_ID
             "Password": "", #T4_User_Password
@@ -22,7 +22,6 @@ ref : [永豐金API元件下單](http://www.sinotrade.com.tw/ec/eleader1/API.htm
 1. import SinopacAPI
 1. .....
  
-### 
  
 ###Todolist
 * 委託下單封裝
@@ -31,7 +30,7 @@ ref : [永豐金API元件下單](http://www.sinotrade.com.tw/ec/eleader1/API.htm
 * 研究一下，Windows版本可否使用線上CI與測試的玩具
 
 ###Run Test
-        $ nosetests -sv test_sinopacAPI.py --with-coverage --cover-package=SinopacAPI --cover-html --cover-erase
+        $ nosetests --with-coverage --cover-package=SinopacAPI --cover-html --cover-erase
 **Any Question?**
 
     mail me : 
