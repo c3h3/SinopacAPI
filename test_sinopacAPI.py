@@ -73,3 +73,9 @@ class TestSinopacAPI(TestCase):
         self.assertEqual(expected, actual.Account)
         expected = 60  # msg 長度
         self.assertEqual(expected, len(actual.Msg))
+
+    def test_get_order_status(self):
+        actual = self.api.GetOrderStatus()
+        for item in self.api.StockOrderStatusList:
+            print item
+        self.assertLessEqual(0, actual)
