@@ -37,19 +37,15 @@ class SinopacAPI(object):
         self._accounts = {}
         self.__load_config()
         self.MakeStockOrder = namedtuple('MakeStockOrder', 'Order_Type,Stock_ID,Qty,Price')
-
         field = 'trade_type Account stock_id ord_price ord_qty ord_seq ord_date effective_date ord_time ord_no ord_soruce org_ord_seq ord_bs ord_type1 ord_type2 market_id price_type ord_status Msg'
         self.StockOrderRecord = namedtuple('StockOrderRecord', field)
         self.StockOrderRecordfmt = '2s15s6s6s3s6s8s8s6s5s3s6s1s1s1s1s1s2s60s'
+
         self.StockOrderRecordList = []
 
     def __load_config(self, config_json='./config.json'):
         with open(config_json) as fd_json:
             self.UserInfo = json.load(fd_json)
-
-    @staticmethod
-    def show_version():
-        return show_version()
 
     @to_utf8
     def login(self):
@@ -58,20 +54,9 @@ class SinopacAPI(object):
         self.__load_account()
         return msg
 
-    def show_user(self):
-        self.__load_config()
-        return self.UserInfo
-
-    @staticmethod
-    def change_echo():
-        change_echo()
-
     @staticmethod
     def logout():
         log_out()
-
-    def MakeStockOrder(self, order_type, stock_id, qty, price):
-        return self.MakeStockOrder._make(Order_Type=order_type, Stock_ID=stock_id, Qty=qty, Price=price)
 
     def PlacingOrder(self, order_obj):
         price = order_obj.Price
@@ -91,9 +76,6 @@ class SinopacAPI(object):
         _qty = str(abs(qty))
         raw_record = stock_order(_bs, self._accounts['S']['branch'], self._accounts['S']['account'], stock_id, _ord_type,
                                  _price, _qty, _price_type)
-        if 'Error' in raw_record:
-            print raw_record.decode('cp950').encode('utf8')
-            return None
         stock_order_record = self._make_stock_order_record(raw_record)
         self.StockOrderRecordList.append(stock_order_record)
         return stock_order_record
@@ -107,7 +89,7 @@ class SinopacAPI(object):
         ord_type = stock_order_record.ord_type1 + stock_order_record.ord_type2
         ord_seq = stock_order_record.ord_seq
         ord_no = stock_order_record.ord_no
-        pre_order = ' ' if int(ord_no) == 0 else 'N'
+        pre_order = ' ' if ord_no == '00000' else 'N'
         raw_record = stock_cancel(bs, branch, account, stock_id, ord_type, ord_seq, ord_no, pre_order)
         if 'Error' in raw_record:
             print raw_record.decode('cp950').encode('utf8')

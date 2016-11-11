@@ -33,7 +33,7 @@ class TestSinopacAPI(TestCase):
     def setUp(self):
         self.api = TestSinopacAPI.api
 
-    @parameterized.expand([(['2890', '01'], SinopacAPI.ORDER_TYPE_SPOT, "2890", 1),
+    @parameterized.expand([(['2890', '01'], SinopacAPI.ORDER_TYPE_SPOT, "2890", 1, 8.09),
                            (['2890', '02'], SinopacAPI.ORDER_TYPE_SPOT, "2890", -1),
                            (['2890', '01'], SinopacAPI.ORDER_TYPE_MARGIN, "2890", 2),
                            (['2890', '02'], SinopacAPI.ORDER_TYPE_MARGIN, "2890", -2),
@@ -51,9 +51,10 @@ class TestSinopacAPI(TestCase):
         self.assertEqual(expected[1], actual.trade_type, '買賣別錯誤')
         print '\n=====Order'
         print ','.join(actual[:-1]) + ',' + str(actual.Msg.strip().decode('cp950').encode('utf8'))
-        actual = self.api.CancelOrder(actual)
-        print ','.join(actual[:-1]) + ',' + str(actual.Msg.strip().decode('cp950').encode('utf8'))
-        print 'Cancel====='
+        if actual.ord_status == '00':
+            actual = self.api.CancelOrder(actual)
+            print ','.join(actual[:-1]) + ',' + str(actual.Msg.strip().decode('cp950').encode('utf8'))
+            print 'Cancel====='
 
     def test_order_return_format(self):
         record = '01S9A95   98093152890  000000001360514201611102016111123171300000152000000B00S200' \

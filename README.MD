@@ -22,6 +22,8 @@ ref : [永豐金API元件下單](http://www.sinotrade.com.tw/ec/eleader1/API.htm
 1. import SinopacAPI
 1. .....
  
+### 
+ 
 ###Todolist
 * 委託下單封裝
 * 回報處理
@@ -29,9 +31,10 @@ ref : [永豐金API元件下單](http://www.sinotrade.com.tw/ec/eleader1/API.htm
 * 研究一下，Windows版本可否使用線上CI與測試的玩具
 
 ###Run Test
-    $ nosetests -sv --with-cover --cover-html
+    $ nosetests -sv test_sinopacAPI.py --with-coverage --cover-html
 
 **Any Question?**
 
+    mail me : 
         ypochien (at) gmail.com
 
