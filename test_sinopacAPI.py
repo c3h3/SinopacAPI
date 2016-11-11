@@ -33,6 +33,12 @@ class TestSinopacAPI(TestCase):
     def setUp(self):
         self.api = TestSinopacAPI.api
 
+    def test_account_list(self):
+        '''設定並且登入正常，會有一組帳號以上，否則請檢查t4的設定'''
+        actual = self.api
+        account_size = len(actual.GetAccount())
+        self.assertGreater(account_size, 0, 'Account not found. Plz check t4.ini and t4.log')
+
     @parameterized.expand([(['2890', '01'], SinopacAPI.ORDER_TYPE_SPOT, "2890", 1, 8.09),
                            (['2890', '02'], SinopacAPI.ORDER_TYPE_SPOT, "2890", -1),
                            (['2890', '01'], SinopacAPI.ORDER_TYPE_MARGIN, "2890", 2),
@@ -67,9 +73,3 @@ class TestSinopacAPI(TestCase):
         self.assertEqual(expected, actual.Account)
         expected = 60  # msg 長度
         self.assertEqual(expected, len(actual.Msg))
-
-    def test_account_list(self):
-        '''設定並且登入正常，會有一組帳號以上，否則請檢查t4的設定'''
-        actual = self.api
-        account_size = len(actual.GetAccount())
-        self.assertGreater(account_size, 0, 'Account not found. Plz check t4.ini and t4.log')

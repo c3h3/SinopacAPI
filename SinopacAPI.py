@@ -37,6 +37,8 @@ class SinopacAPI(object):
         self._accounts = {}
         self.__load_config()
         self.MakeStockOrder = namedtuple('MakeStockOrder', 'Order_Type,Stock_ID,Qty,Price')
+        self.MakeCancelOrder = namedtuple('MakeCancelOrder',
+                                          'account, branch, bs, ord_no, ord_seq, ord_type, pre_order, stock_id')
         field = 'trade_type Account stock_id ord_price ord_qty ord_seq ord_date effective_date ord_time ord_no ord_soruce org_ord_seq ord_bs ord_type1 ord_type2 market_id price_type ord_status Msg'
         self.StockOrderRecord = namedtuple('StockOrderRecord', field)
         self.StockOrderRecordfmt = '2s15s6s6s3s6s8s8s6s5s3s6s1s1s1s1s1s2s60s'
@@ -74,7 +76,8 @@ class SinopacAPI(object):
         _ord_type = '0' + order_type
         _bs = 'B' if qty > 0 else 'S'
         _qty = str(abs(qty))
-        raw_record = stock_order(_bs, self._accounts['S']['branch'], self._accounts['S']['account'], stock_id, _ord_type,
+        raw_record = stock_order(_bs, self._accounts['S']['branch'], self._accounts['S']['account'], stock_id,
+                                 _ord_type,
                                  _price, _qty, _price_type)
         stock_order_record = self._make_stock_order_record(raw_record)
         self.StockOrderRecordList.append(stock_order_record)
@@ -82,6 +85,18 @@ class SinopacAPI(object):
 
     def CancelOrder(self, stock_order_record):
         # stock_order_record = self.StockOrderRecord
+        stock_cancel_pkg = self.order_record_to_cancel_order_fmt(stock_order_record)
+        raw_record = stock_cancel(stock_cancel_pkg.bs, stock_cancel_pkg.branch, stock_cancel_pkg.account,
+                                  stock_cancel_pkg.stock_id, stock_cancel_pkg.ord_type, stock_cancel_pkg.ord_seq,
+                                  stock_cancel_pkg.ord_no, stock_cancel_pkg.pre_order)
+        if 'Error' in raw_record:
+            print raw_record.decode('cp950').encode('utf8')
+            return None
+        stock_cancel_record = self._make_stock_order_record(raw_record)
+        self.StockOrderRecordList.append(stock_cancel_record)
+        return stock_cancel_record
+
+    def order_record_to_cancel_order_fmt(self, stock_order_record):
         bs = stock_order_record.ord_bs
         branch = stock_order_record.Account[1:7].strip()
         account = stock_order_record.Account[7:15].strip()
@@ -90,13 +105,7 @@ class SinopacAPI(object):
         ord_seq = stock_order_record.ord_seq
         ord_no = stock_order_record.ord_no
         pre_order = ' ' if ord_no == '00000' else 'N'
-        raw_record = stock_cancel(bs, branch, account, stock_id, ord_type, ord_seq, ord_no, pre_order)
-        if 'Error' in raw_record:
-            print raw_record.decode('cp950').encode('utf8')
-            return None
-        stock_cancel_record = self._make_stock_order_record(raw_record)
-        self.StockOrderRecordList.append(stock_cancel_record)
-        return stock_cancel_record
+        return self.MakeCancelOrder(account, branch, bs, ord_no, ord_seq, ord_type, pre_order, stock_id)
 
     def _make_stock_order_record(self, raw_record):
         """stock_order_reply_record to StockOrderRecord struct."""
